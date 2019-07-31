@@ -7,8 +7,6 @@ namespace ReflectionOnBaseClass
         static void Main(string[] args)
         {
             var caller = new Caller<MyClient>();
-            Console.WriteLine(caller.Acccessor.EndPointA);
-            Console.WriteLine(caller.Acccessor.EndPointB);
             Console.ReadLine();
 
         }
@@ -22,10 +20,14 @@ namespace ReflectionOnBaseClass
         public Caller()
         {
             Acccessor = ClientBaseAccessor.CreateAccessor(new TClient());
+
+            Console.WriteLine(Acccessor.EndPointA);
+            Console.WriteLine(Acccessor.EndPointB);
+
         }
 
 
-        public ClientBaseAccessor Acccessor { get; }
+        private ClientBaseAccessor Acccessor { get; }
     }
 
 }
