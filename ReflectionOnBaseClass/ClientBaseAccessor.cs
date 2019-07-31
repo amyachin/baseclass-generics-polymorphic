@@ -17,9 +17,9 @@ namespace ReflectionOnBaseClass
 
             var interfaceType = clientBaseType.GenericTypeArguments[0];
             var accessorTypeGeneric = typeof(ClientBaseAccessor<,>);
-            var accessType = accessorTypeGeneric.MakeGenericType(typeof(TClient), interfaceType);
+            var accessorType = accessorTypeGeneric.MakeGenericType(typeof(TClient), interfaceType);
 
-            return (ClientBaseAccessor)Activator.CreateInstance(accessType, client);
+            return (ClientBaseAccessor)Activator.CreateInstance(accessorType, client);
         }
 
 
